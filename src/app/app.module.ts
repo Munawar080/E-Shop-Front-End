@@ -15,6 +15,7 @@ import { OrderSuccessComponent } from './components/order-success/order-success.
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,16 @@ import { AdminProductsComponent } from './components/admin/admin-products/admin-
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule, MatIconModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent},
+      { path: 'products', component: ProductsComponent},
+      { path: 'shopping-cart', component: ShoppingCartComponent},
+      { path: 'my-orders', component: MyOrdersComponent},
+      { path: 'order-success', component: OrderSuccessComponent},
+      { path: 'check-out', component: CheckOutComponent},
+      { path: 'admin-order', component: AdminOrdersComponent},
+      { path: 'admin-products', component: AdminProductsComponent},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
