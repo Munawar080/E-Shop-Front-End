@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,15 +35,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule, MatIconModule,
+    RouterModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
-      { path: 'products', component: ProductsComponent},
-      { path: 'shopping-cart', component: ShoppingCartComponent},
-      { path: 'my-orders', component: MyOrdersComponent},
-      { path: 'order-success', component: OrderSuccessComponent},
-      { path: 'check-out', component: CheckOutComponent},
-      { path: 'admin-order', component: AdminOrdersComponent},
-      { path: 'admin-products', component: AdminProductsComponent},
+      { path: 'components/products', component: ProductsComponent},
+      { path: 'components/shopping-cart', component: ShoppingCartComponent},
+      { path: 'components/my-orders', component: MyOrdersComponent},
+      { path: 'components/order-success', component: OrderSuccessComponent},
+      { path: 'components/check-out', component: CheckOutComponent},
+      { path: 'components/admin/admin-order', component: AdminOrdersComponent},
+      { path: 'components/admin/admin-products', component: AdminProductsComponent},
     ]),
     NgbModule
   ],
