@@ -46,7 +46,7 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
       { path: 'components/my-orders', component: MyOrdersComponent},
       { path: 'components/order-success', component: OrderSuccessComponent},
       { path: 'components/check-out', component: CheckOutComponent},
-      { path: 'components/admin/admin-order', component: AdminOrdersComponent},
+      { path: 'components/admin/admin-orders', component: AdminOrdersComponent},
       { path: 'components/admin/admin-products', component: AdminProductsComponent},
       { path: 'components/login-out/login', component: LoginComponent},
     ]),
