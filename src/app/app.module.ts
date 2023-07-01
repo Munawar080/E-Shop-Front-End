@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { AdminProductsComponent } from './components/admin/admin-products/admin-
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './components/login-out/login/login.component';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -49,9 +50,30 @@ import { LoginComponent } from './components/login-out/login/login.component';
       { path: 'components/admin/admin-products', component: AdminProductsComponent},
       { path: 'components/login-out/login', component: LoginComponent},
     ]),
-    NgbModule
+    NgbModule, 
+    SocialLoginModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '102492830902-8ktsaguk314f5b0fgg06jdr3afrak7c1.apps.googleusercontent.com'
+            )
+          }
+        ],
+        onError: (err: any) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
+
+  ],
+  bootstrap: [AppComponent],
+ 
 })
 export class AppModule { }
