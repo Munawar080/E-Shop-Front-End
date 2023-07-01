@@ -15,15 +15,4 @@ export class HomeComponent implements OnInit {
       console.log('response from google login ===>>>>>', res)
     })
   }
-
-  // signInWithGoogle(): void {
-  //   this.authServices.signIn(GoogleLoginProvider.PROVIDER_ID);
-  // }
-
-  // signOut(): void {
-  //   this.authServices.signOut();
-  // }
-
-
-
 }
